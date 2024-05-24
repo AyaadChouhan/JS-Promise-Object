@@ -1,0 +1,42 @@
+// Promises in JavaScript are objects used to handle asynchronous operations, allowing you to write cleaner, more manageable code for tasks that will complete in the future. They represent the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+// Syntax:
+
+let promise = new Promise(function (resolve, reject) {
+  //do something
+});
+
+// fulfilled: Action related to the promise succeeded
+// rejected: Action related to the promise failed
+// pending: Promise is still pending i.e. not fulfilled or rejected yet
+// settled: Promise has been fulfilled or rejected
+
+let promise1 = new Promise(function (resolve, reject) {
+  const x = "geeksforgeeks";
+  const y = "geeksforgeeks";
+  if (x === y) {
+    resolve();
+  } else {
+    reject();
+  }
+});
+
+promise1
+  .then(function () {
+    console.log("Success, You are a GEEK");
+  })
+  .catch(function () {
+    console.log("Some error has occurred");
+  });
+
+// Handling Promises
+// To handle the eventual completion of a promise, you use the .then() and .catch() methods.
+
+// .then() is used for handling a fulfilled promise.
+// .catch() is used for handling a rejected promise.
+
+myPromise.then((value) => {
+    console.log(value); // 'Operation was successful'
+  }).catch((error) => {
+    console.error(error); // 'Operation failed'
+  });
